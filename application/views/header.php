@@ -113,51 +113,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
             <section class="prod-list">
                 <div class="wrapper">
+                    <?php foreach($prods as $p){?>
                     <div class="product">
-                        <img src="<?=base_url('assets/images/coffee.svg')?>" alt="" height="50" style="object-fit:cover !important">      
-                        <h3>Seeds</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
+                        <img src="<?=base_url('assets/images/').$p->img_src?>" alt="<?=$p->name?>" height="50" style="object-fit:cover !important">      
+                        <h3><?=$p->name?></h3>
+                        <a href="<?=$p->link_src?>" class="btn"><?=$p->link_text?></a>
                     </div>
-                    <div class="product">
-                        <img src="<?=base_url('assets/images/fertilizer.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>Fertilizers</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
-                    <div class="product">
-                        <img src="<?=base_url('assets/images/pesticide.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>Agro chemicals</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
-                    <div class="product">
-                        <img src="<?=base_url('assets/images/gloves.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>Agro equipments</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
+                    <?php }?>
                 </div>
                 <a href="<?=base_url('products')?>" class="btn allBtn">See all</a>
             </section>
             <section class="serv-list">
                 <div class="wrapper">
+                    <?php foreach($services as $s){?>
                     <div class="service">
-                        <img src="<?=base_url('assets/images/coffee.svg')?>" alt="" height="50" style="object-fit:cover !important">      
-                        <h3>Soil testing</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
+                        <img src="<?=base_url('assets/images/').$s->img_src?>" alt="<?=$s->name?>" height="60" style="object-fit:cover !important">      
+                        <h3><?=$s->name?></h3>
+                        <a href="<?=$s->link_src?>" class="btn"><?=$s->link_text?></a>
                     </div>
-                    <div class="service">
-                        <img src="<?=base_url('assets/images/fertilizer.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>Import/Export</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
-                    <div class="service">
-                        <img src="<?=base_url('assets/images/pesticide.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>24/7 consultancy</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
-                    <div class="service">
-                        <img src="<?=base_url('assets/images/gloves.svg')?>" alt="" height="50" style="object-fit:cover !important">
-                        <h3>Artificial Insemination</h3>
-                        <a href="" class="btn">Buy/Sell Now</a>
-                    </div>
+                    <?php }?>
                 </div>
                 <a href="<?=base_url('services')?>" class="btn allBtn">See all</a>
             </section>

@@ -28,6 +28,40 @@ class Delete extends MY_Controller {
             }
         }
 
+        public function Service($id)
+        {
+            
+            $d= $this->fetch->getInfoById($id, 'services');
+            $path= 'assets/images/'.$d->img_src;
+            $status= $this->delete->deleteInfo($id, 'services');
+            if($status){
+                unlink("$path");
+                $this->session->set_flashdata('success','Service Deleted!');
+                redirect('Admin/Services');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/Services');
+            }
+        }
+
+        public function Product($id)
+        {
+            
+            $d= $this->fetch->getInfoById($id, 'products');
+            $path= 'assets/images/'.$d->img_src;
+            $status= $this->delete->deleteInfo($id, 'products');
+            if($status){
+                unlink("$path");
+                $this->session->set_flashdata('success','Product Deleted!');
+                redirect('Admin/Products');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/Products');
+            }
+        }
+
         public function Role($id)
         {
             $status= $this->delete->deleteRole($id, 'reg_roles');

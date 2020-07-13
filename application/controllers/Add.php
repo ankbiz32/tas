@@ -52,6 +52,94 @@ class Add extends MY_Controller {
             } 
         }
 
+        public function Product()
+        {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('link_src', 'Link text', 'required');
+            $this->form_validation->set_rules('link_text', 'Link', 'required');
+            if($this->form_validation->run() == true){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "*",
+                    "remove_spaces" => TRUE,
+                    "max_size" => 350
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',strip_tags($this->upload->display_errors()) );
+                    redirect('Admin/Products');
+                }
+                else {
+                    $imgdata = $this->upload->data();
+                    $imagename = $imgdata['file_name'];
+                    $data=array('name'=>$this->input->post('name'),
+                            'link_src'=>$this->input->post('link_src'),
+                            'link_text'=>$this->input->post('link_text'),
+                            'img_src'=>$imagename
+                            );
+                    $status= $this->save->saveInfo($data, 'products');
+
+                    if($status){
+                        $this->session->set_flashdata('success','New Product added !' );
+                        redirect('Admin/Products');
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect('Admin/Products');
+                    }
+                } 
+            }
+            else{
+                $this->session->set_flashdata('failed','Error !');
+                redirect('Admin/Products');
+            } 
+        }
+
+        public function Service()
+        {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('link_src', 'Link text', 'required');
+            $this->form_validation->set_rules('link_text', 'Link', 'required');
+            if($this->form_validation->run() == true){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "*",
+                    "remove_spaces" => TRUE,
+                    "max_size" => 350
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',strip_tags($this->upload->display_errors()) );
+                    redirect('Admin/Services');
+                }
+                else {
+                    $imgdata = $this->upload->data();
+                    $imagename = $imgdata['file_name'];
+                    $data=array('name'=>$this->input->post('name'),
+                            'link_src'=>$this->input->post('link_src'),
+                            'link_text'=>$this->input->post('link_text'),
+                            'img_src'=>$imagename
+                            );
+                    $status= $this->save->saveInfo($data, 'services');
+
+                    if($status){
+                        $this->session->set_flashdata('success','New Service added !' );
+                        redirect('Admin/Services');
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect('Admin/Services');
+                    }
+                } 
+            }
+            else{
+                $this->session->set_flashdata('failed','Error !');
+                redirect('Admin/Services');
+            } 
+        }
+
         public function Role()
         {
             $this->form_validation->set_rules('role', 'Role name', 'required');

@@ -1,13 +1,5 @@
-<!-- <div class="sub-header" style="background:linear-gradient(to right, rgba(0,0,0,0.6) 40%,rgba(0,0,0,0.1)), url(<?=base_url('assets/images/about_header.jpg')?>);">
-    <div class="wrapper">
-        <div class="content">
-            <h1>Project</h1>
-            <p>Here are some details of this project.
-            </p>
-        </div>
-    </div>
-</div> -->
-<div class="wrapper back-link wow fadeInUp" data-wow-delay="0s">
+
+<div class="wrapper back-link wow fadeInUp ev" data-wow-delay="0s">
     <a onclick="window.history.back();" class="sans back-top"><i class="fa fa-caret-left"></i> Go back</a>
 </div>
 

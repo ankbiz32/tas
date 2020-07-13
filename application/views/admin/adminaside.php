@@ -59,6 +59,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?=base_url('Admin/Services')?>" class="nav-link <?php if($this->uri->segment(2)=="Services"){echo ' CustomActive';}?>">
+              <i class="far fa-cog nav-icon"></i>
+              <p>Services</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url('Admin/Products')?>" class="nav-link <?php if($this->uri->segment(2)=="Products"){echo ' CustomActive';}?>">
+              <i class="far fa-cube nav-icon"></i>
+              <p>Products</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?=base_url('Admin/Projects')?>" class="nav-link <?php if($this->uri->segment(2)=="Projects"){echo ' CustomActive';}?>">
               <i class="far fa-cubes nav-icon"></i>
               <p>Projects</p>

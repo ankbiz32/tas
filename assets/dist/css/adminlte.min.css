@@ -13,7 +13,7 @@
 
 
 .main-sidebar {
-    background:#37B248ee;
+    background:#37B24899;
     /* background: linear-gradient(to bottom,white, #37B248)!important; */
     overflow-x:hidden !important;
 }
@@ -23,7 +23,7 @@
 .main-sidebar .info a
 {
     font-weight:600;
-    color:white;
+    color:#111 !important;
 }
 
 .brand-text{
@@ -32,7 +32,7 @@
 
 .CustomActive{
     background-color:rgba(255,255,255,0.3);
-    /* color: white !important; */
+    color: #111 !important;
 }
 
 aside #website-link{

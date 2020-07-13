@@ -63,6 +63,24 @@ class Admin extends MY_Controller {
         }
 
         
+        public function Services()
+        {
+                $data=$this->fetch->getInfoByOrder('services');
+                $this->load->view('admin/adminheader',['data' => $data]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/services'); 
+                $this->load->view('admin/adminfooter');  
+        }
+        
+        public function Products()
+        {
+                $data=$this->fetch->getInfoByOrder('products');
+                $this->load->view('admin/adminheader',['data' => $data]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/products'); 
+                $this->load->view('admin/adminfooter');  
+        }
+        
         public function Projects()
         {
                 $data=$this->fetch->getInfoByOrder('projects');

@@ -11,6 +11,8 @@ class Home extends MY_Controller {
 	{
 		$slides=$this->fetch->getInfo('hero_slider');
 		$projects=$this->fetch->getInfo('projects');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$events=$this->fetch->getInfoByOrder('events');
 		$gallery=$this->fetch->getInfoByOrder('gallery');
 		$states=$this->fetch->getInfo('states');
@@ -26,6 +28,8 @@ class Home extends MY_Controller {
 						'events'=>$events,
 						'projects'=>$projects,
 						'roles'=>$roles,
+						'prods'=>$prods,
+						'services'=>$services,
 						'states'=>$states,
 						'gallery'=>$gallery,
 						'web'=>$web,
@@ -40,11 +44,15 @@ class Home extends MY_Controller {
 	public function About()
 	{
 		$web=$this->fetch->getWebProfile('webprofile');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
 		$this->load->view('header',['title'=>'About Us',
 									'roles'=>$roles,
 									'states'=>$states,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('about');
@@ -54,6 +62,8 @@ class Home extends MY_Controller {
 	public function Media()
 	{
 		$gallery=$this->fetch->getInfo('gallery');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$web=$this->fetch->getWebProfile('webprofile');
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
@@ -61,6 +71,8 @@ class Home extends MY_Controller {
 									'roles'=>$roles,
 									'gallery'=>$gallery,
 									'states'=>$states,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('media');
@@ -70,6 +82,8 @@ class Home extends MY_Controller {
 	public function Projects()
 	{
 		$projects=$this->fetch->getInfoByOrder('projects');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
 		$web=$this->fetch->getWebProfile('webprofile');
@@ -77,6 +91,8 @@ class Home extends MY_Controller {
 									'roles'=>$roles,
 									'states'=>$states,
 									'projects'=>$projects,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('projects');
@@ -86,6 +102,8 @@ class Home extends MY_Controller {
 	public function Project($id)
 	{
 		$project=$this->fetch->getInfoById($id,'projects');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
 		$recents=$this->fetch->getInfoByLim('projects',4);
@@ -95,6 +113,8 @@ class Home extends MY_Controller {
 									'states'=>$states,
 									'project'=>$project,
 									'recents'=>$recents,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('project');
@@ -104,6 +124,8 @@ class Home extends MY_Controller {
 	public function Events()
 	{
 		$events=$this->fetch->getInfoByOrder('events');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
 		$web=$this->fetch->getWebProfile('webprofile');
@@ -111,6 +133,8 @@ class Home extends MY_Controller {
 									'roles'=>$roles,
 									'states'=>$states,
 									'events'=>$events,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('events');
@@ -120,6 +144,8 @@ class Home extends MY_Controller {
 	public function Event($id)
 	{
 		$event=$this->fetch->getInfoById($id,'events');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$social_meta='';
 		if(!empty($event)){
 			$social_meta='
@@ -148,6 +174,8 @@ class Home extends MY_Controller {
 									'roles'=>$roles,
 									'states'=>$states,
 									'event'=>$event,
+									'prods'=>$prods,
+									'services'=>$services,
 									'recents'=>$recents,
 									'social_meta'=>$social_meta,
 									'web'=>$web
@@ -159,11 +187,15 @@ class Home extends MY_Controller {
 	public function Privacy()
 	{
 		$web=$this->fetch->getWebProfile('webprofile');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
 		$states=$this->fetch->getInfo('states');
 		$roles=$this->fetch->getInfo('reg_roles');
 		$this->load->view('header',['title'=>'Privacy Policy',
 									'roles'=>$roles,
 									'states'=>$states,
+									'prods'=>$prods,
+									'services'=>$services,
 									'web'=>$web
 									]);
 		$this->load->view('policies');

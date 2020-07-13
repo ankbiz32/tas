@@ -99,6 +99,14 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
+        public function editableImages()
+        {
+                $this->load->view('admin/adminheader'); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/header_images'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
         public function webProfile()
         {
                 $profile=$this->fetch->getWebProfile();

@@ -1,4 +1,4 @@
-<div class="sub-header" style="background:linear-gradient(to right, rgba(0,0,0,0.6) 40%,rgba(0,0,0,0.1)), url(<?=base_url('assets/images/about_header.jpg')?>);">
+<div class="sub-header" style="background:linear-gradient(to right, rgba(0,0,0,0.6) 40%,rgba(0,0,0,0.1)), url(<?=base_url('assets/images/policies_header.jpg')?>);">
         <div class="wrapper">
             <div class="content wow fadeInUp" data-wow-delay="0s">
                 <h1>Privacy Policy</h1>

@@ -225,6 +225,35 @@ class Edit extends MY_Controller {
             }
         }
 
+        
+        public function Header_images($name){
+            if($_FILES['img']['name']!=null){
+                $path ='assets/images/';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp",
+                    "remove_spaces" => TRUE,
+                    "max_size" => 550,
+                    "overwrite" => true,
+                    'file_name' => $name.'.jpg'
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',trim(strip_tags($this->upload->display_errors())) );
+                    redirect('Admin/editableImages');
+                } 
+                else {
+                    $this->session->set_flashdata('success',"Image updated" );
+                    redirect('Admin/editableImages');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed','No file selected' );
+                redirect('Admin/editableImages');
+            }
+        }
+
+
         public function Gallery($id)
         {
             if($_FILES['img']['name']!=null){

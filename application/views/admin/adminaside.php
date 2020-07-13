@@ -95,6 +95,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?=base_url('Admin/editableImages')?>" class="nav-link <?php if($this->uri->segment(2)=="editableImages"){echo ' CustomActive';}?>">
+              <i class="fa fa-square nav-icon"></i>
+              <p>Editable images</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?=base_url('Admin/webProfile')?>" class="nav-link <?php if($this->uri->segment(2)=="webProfile"){echo ' CustomActive';}?>">
               <i class="fa fa-globe nav-icon"></i>
               <p>TAS Web profile</p>

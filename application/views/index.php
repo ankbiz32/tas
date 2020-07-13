@@ -38,7 +38,12 @@
                 </div>
         </div>
     </section>
+
     <section class="services1">
+        <div class="wrapper2">
+            <h2>Services</h2>
+            <a href="<?=base_url('services')?>" class="btn serif">See all</a>
+        </div>
         <div class="wrapper">
             <?php foreach($services as $ser){?>
             <div class="service wow fadeInUp" data-wow-offset="50" data-wow-delay="0s">
@@ -51,8 +56,9 @@
     </section>
 
     <section class="products">
-        <div class="wrapper">
+        <div class="wrapper2">
             <h2>Range of products</h2>
+            <a href="<?=base_url('products')?>" class="btn serif">See all</a>
         </div>
         <div class="wrapper">
             <?php foreach($prods as $pr){?>
@@ -63,10 +69,9 @@
                 </div>
             <?php }?>
         </div>
-        <a href="<?=base_url('products')?>" class="btn allBtn">See all</a>
     </section>
 
-    <section class="overview" id="overview" style="background:url('assets/images/success2.png') no-repeat ;">
+    <section class="overview" id="overview" style="background:url('assets/images/success2.jpg') no-repeat ;">
         <div class="wrapper">
             <div class="content wow slideInLeft" data-wow-offset="50">
                 <p>
@@ -158,7 +163,7 @@
 
     <section class="success">
         <h2 class="hidden wow fadeInUp" data-wow-offset="50" data-wow-delay="0s">Success Stories</h2>
-        <div class="img wow fadeInUp" data-wow-offset="50" data-wow-delay="0s" style="background: url('assets/images/success.png') no-repeat;"></div>
+        <div class="img wow fadeInUp" data-wow-offset="50" data-wow-delay="0s" style="background: url('assets/images/success.jpg') no-repeat;"></div>
         <div class="content">
             <div class="stories">
                 <h2 class="in-head">Success Stories</h2>
@@ -202,7 +207,7 @@
         </div>
     </section>
 
-    <section class="counts" style="background: linear-gradient(rgba(162,211,162,0.7),rgba(162,211,162,0.7)), url('assets/images/agriculture-clouds-corn-corn-field-539282-min.jpg') no-repeat;">
+    <section class="counts" style="background: linear-gradient(rgba(162,211,162,0.7),rgba(162,211,162,0.7)), url('assets/images/counters_bg.jpg') no-repeat;">
         <div class="wrapper">
             <div class="counts-container">
                 <div class="count">

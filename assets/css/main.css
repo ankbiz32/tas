@@ -754,6 +754,13 @@ ul.reg-list li a:hover{
 .services1{
   background-color: #A2D3A2;
 }
+.services1 .wrapper2, .products .wrapper2{
+  width: 85%;
+  margin: 0 auto 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .services1 .wrapper{
   display: flex;
   justify-content: space-between;
@@ -780,7 +787,7 @@ ul.reg-list li a:hover{
   margin-top: 10px;
   font-size: 2rem;
 }
-.services1  a.btn{
+.services1 .wrapper a.btn{
   display: inline-block;
   margin-top: 1rem;
   background-color: #5cb85c;
@@ -788,8 +795,20 @@ ul.reg-list li a:hover{
   font-size: 1.4rem;
   color: white;
  }
- .services1 a.btn:hover{
+ .services1 .wrapper a.btn:hover{
   background-color: #5cb85cdd;
+ }
+
+ .services1 .wrapper2 a.btn,.products .wrapper2 a.btn{
+  display: inline-block;
+  border:1px solid #5cb85c;
+  padding: 5px 15px;
+  font-size: 1.4rem;
+  color: black;
+ }
+ .services1 .wrapper2 a.btn:hover,.products .wrapper2 a.btn:hover{
+  background-color: #5cb85cdd;
+  color: white;
  }
 
 .products .wrapper{
@@ -844,6 +863,30 @@ ul.reg-list li a:hover{
 .products .allBtn:hover{
   background-color:#5cb85c;
   color: white;
+}
+
+
+.products.prod-inner .wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+
+.products.prod-inner .product{
+  text-align: center;
+  background-color: #5cb85c11;
+  padding: 30px 20px;
+  flex-basis: 23%;
+  transition: 0.3s;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+}
+.products.serv-inner .product{
+  background-color: transparent;
+}
+.products.serv-inner .product:hover{
+  transform: translateY(0);
+  background-color: transparent;
 }
 
 
@@ -2517,6 +2560,13 @@ footer .wrapper .lower .mark::after {
   .prod-list .allBtn, .service-list .allBtn{
     margin-left: 50% !important;
     transform: translateX(-50%) !important;
+  }
+  .products.prod-inner .wrapper{
+    justify-content: space-between;
+  }
+  
+  .products.prod-inner .product{
+    margin-right: 0;
   }
 
 

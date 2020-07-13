@@ -59,6 +59,46 @@ class Home extends MY_Controller {
 		$this->load->view('footer');
 	}
 
+	public function Services()
+	{
+		$web=$this->fetch->getWebProfile('webprofile');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
+		$states=$this->fetch->getInfo('states');
+		$roles=$this->fetch->getInfo('reg_roles');
+		$servicesAll=$this->fetch->getInfo('services');
+		$this->load->view('header',['title'=>'About Us',
+									'roles'=>$roles,
+									'states'=>$states,
+									'prods'=>$prods,
+									'services'=>$services,
+									'servicesAll'=>$servicesAll,
+									'web'=>$web
+									]);
+		$this->load->view('services');
+		$this->load->view('footer');
+	}
+
+	public function Products()
+	{
+		$web=$this->fetch->getWebProfile('webprofile');
+		$prods=$this->fetch->getInfoByLim('products',4);
+		$services=$this->fetch->getInfoByLim('services',4);
+		$productsAll=$this->fetch->getInfo('products');
+		$states=$this->fetch->getInfo('states');
+		$roles=$this->fetch->getInfo('reg_roles');
+		$this->load->view('header',['title'=>'About Us',
+									'roles'=>$roles,
+									'states'=>$states,
+									'prods'=>$prods,
+									'productsAll'=>$productsAll,
+									'services'=>$services,
+									'web'=>$web
+									]);
+		$this->load->view('products');
+		$this->load->view('footer');
+	}
+
 	public function Media()
 	{
 		$gallery=$this->fetch->getInfo('gallery');

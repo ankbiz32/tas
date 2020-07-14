@@ -90,52 +90,16 @@
             </p>
         </div>
         <div class="scheme-container owl-carousel wow slideInRight" data-wow-offset="50" data-wow-delay="0.2s">
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/shc-farmers.jpg') no-repeat;">
+        <?php foreach($schemes as $sch){?>
+            <a href="<?=$sch->link?>" class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?=base_url()?>assets/images/<?=$sch->img_src?>') no-repeat; display:block">
                 <h1 class="short serif">
-                    SHC
+                    <?=$sch->short_name?>
                 </h1>
                 <h3 class="full serif" >
-                    Soil Health Card
+                    <?=$sch->name?>
                 </h3>
-            </div>
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/pmksy-min.jpg') no-repeat;">
-                <h1 class="short serif">
-                    PMKSY
-                </h1>
-                <h3 class="full serif">Pradhan Mantri Krishi Sinchayee Yojana</h3>
-            </div>
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/NMSAlogo.png') no-repeat;">
-                <h1 class="short serif">
-                    NMSA
-                </h1>
-                <h3 class="full serif">
-                    National Mission for Sustainable Agriculture
-                </h3>
-            </div>
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/farm-machinery-bank.jpg') no-repeat;">
-                <h1 class="short serif">
-                    FMB
-                </h1>
-                <h3 class="full serif">
-                    Farm Machinery Bank
-                </h3>
-            </div>
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/pmfby.jpg') no-repeat;">
-                <h1 class="short serif">
-                    PMFBY
-                </h1>
-                <h3 class="full serif">
-                    Pradhan Mantri Fasal Bima Yojana
-                </h3>
-            </div>
-            <div class="scheme" style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('assets/images/e-nam.jpg') no-repeat;">
-                <h1 class="short serif">
-                    E-NAM
-                </h1>
-                <h3 class="full serif">
-                    e- National Agriculture Market
-                </h3>
-            </div>
+            </a>
+        <?php }?>
         </div>
     </section>
 

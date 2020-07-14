@@ -62,6 +62,23 @@ class Delete extends MY_Controller {
             }
         }
 
+        public function Scheme($id)
+        {
+            
+            $d= $this->fetch->getInfoById($id, 'schemes');
+            $path= 'assets/images/'.$d->img_src;
+            $status= $this->delete->deleteInfo($id, 'schemes');
+            if($status){
+                unlink("$path");
+                $this->session->set_flashdata('success','Scheme Deleted!');
+                redirect('Admin/Schemes');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/Schemes');
+            }
+        }
+
         public function Role($id)
         {
             $status= $this->delete->deleteRole($id, 'reg_roles');

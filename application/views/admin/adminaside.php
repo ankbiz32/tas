@@ -89,6 +89,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?=base_url('Admin/Schemes')?>" class="nav-link <?php if($this->uri->segment(2)=="Schemes"){echo ' CustomActive';}?>">
+              <i class="fas fa-handshake nav-icon"></i>
+              <p>Schemes</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?=base_url('Admin/Gallery')?>" class="nav-link <?php if($this->uri->segment(2)=="Gallery"){echo ' CustomActive';}?>">
               <i class="fa fa-image nav-icon"></i>
               <p>Gallery</p>

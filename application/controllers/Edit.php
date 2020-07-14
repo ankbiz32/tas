@@ -122,6 +122,43 @@ class Edit extends MY_Controller {
             }
         }
 
+        public function Scheme($id)
+        {
+            $data=$this->input->post();
+
+            if($_FILES['img']['name']!=null){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "*",
+                    "remove_spaces" => TRUE,
+                    "max_size" => 350
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',strip_tags($this->upload->display_errors() ) );
+                    redirect('Admin/Schemes');
+                } 
+                else {
+                    $imgdata = $this->upload->data();
+                    $data['img_src'] = $imgdata['file_name'];
+                    $d= $this->fetch->getInfoById($id,'schemes');
+                    $path= 'assets/images/'.$d->img_src;
+                }
+            }
+
+            $status= $this->edit->updateInfo($data, $id, 'schemes');
+            if($status){
+                unlink($path);
+                $this->session->set_flashdata('success','Scheme Updated !');
+                redirect('Admin/Schemes');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error !');
+                redirect('Admin/Schemes');
+            }
+        }
+
         public function Role($id)
         {
             $data=$this->input->post();

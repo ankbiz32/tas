@@ -81,6 +81,15 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
         
+        public function Schemes()
+        {
+                $data=$this->fetch->getInfoByOrder('schemes');
+                $this->load->view('admin/adminheader',['data' => $data]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/schemes'); 
+                $this->load->view('admin/adminfooter');  
+        }
+        
         public function Projects()
         {
                 $data=$this->fetch->getInfoByOrder('projects');

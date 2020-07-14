@@ -11,6 +11,7 @@ class Home extends MY_Controller {
 	{
 		$slides=$this->fetch->getInfo('hero_slider');
 		$projects=$this->fetch->getInfo('projects');
+		$schemes=$this->fetch->getInfo('schemes');
 		$prods=$this->fetch->getInfoByLim('products',4);
 		$services=$this->fetch->getInfoByLim('services',4);
 		$events=$this->fetch->getInfoByOrder('events');
@@ -29,6 +30,7 @@ class Home extends MY_Controller {
 						'projects'=>$projects,
 						'roles'=>$roles,
 						'prods'=>$prods,
+						'schemes'=>$schemes,
 						'services'=>$services,
 						'states'=>$states,
 						'gallery'=>$gallery,

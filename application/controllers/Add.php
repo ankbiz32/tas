@@ -47,7 +47,7 @@ class Add extends MY_Controller {
                 } 
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Hero_sliders');
             } 
         }
@@ -91,7 +91,7 @@ class Add extends MY_Controller {
                 } 
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Products');
             } 
         }
@@ -135,8 +135,52 @@ class Add extends MY_Controller {
                 } 
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Services');
+            } 
+        }
+
+        public function Scheme()
+        {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('short_name', 'Short form', 'required');
+            $this->form_validation->set_rules('link', 'Link', 'required');
+            if($this->form_validation->run() == true){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "*",
+                    "remove_spaces" => TRUE,
+                    "max_size" => 350
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',strip_tags($this->upload->display_errors()) );
+                    redirect('Admin/Schemes');
+                }
+                else {
+                    $imgdata = $this->upload->data();
+                    $imagename = $imgdata['file_name'];
+                    $data=array('name'=>$this->input->post('name'),
+                            'short_name'=>$this->input->post('short_name'),
+                            'link'=>$this->input->post('link'),
+                            'img_src'=>$imagename
+                            );
+                    $status= $this->save->saveInfo($data, 'schemes');
+
+                    if($status){
+                        $this->session->set_flashdata('success','New Scheme added !' );
+                        redirect('Admin/Schemes');
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect('Admin/Schemes');
+                    }
+                } 
+            }
+            else{
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
+                redirect('Admin/Schemes');
             } 
         }
 
@@ -182,7 +226,7 @@ class Add extends MY_Controller {
                 }
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Feedbacks');
             } 
         }
@@ -226,7 +270,7 @@ class Add extends MY_Controller {
                 } 
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Events');
             } 
         }
@@ -268,7 +312,7 @@ class Add extends MY_Controller {
                 } 
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Projects');
             } 
         }

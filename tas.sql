@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2020 at 08:16 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.2.20
+-- Generation Time: Jul 14, 2020 at 08:32 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48239,6 +48238,32 @@ INSERT INTO `reg_roles` (`role_id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `schemes`
+--
+
+CREATE TABLE `schemes` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `short_name` varchar(20) NOT NULL,
+  `img_src` varchar(100) NOT NULL,
+  `link` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `schemes`
+--
+
+INSERT INTO `schemes` (`id`, `name`, `short_name`, `img_src`, `link`) VALUES
+(1, 'Soil Health Card', 'SHC', 'shc-farmers.jpg', '#'),
+(2, 'Pradhan Mantri Krishi Sinchayee Yojana', 'PMKSY', 'pmksy-min.jpg', '#'),
+(3, 'National Mission for Sustainable Agriculture', 'NMSA', 'NMSAlogo.png', '#'),
+(4, 'Farm Machinery Bank', 'FMB', 'farm-machinery-bank.jpg', '#'),
+(5, 'Pradhan Mantri Fasal Bima Yojana', 'PMFBY', 'pmfby.jpg', '#'),
+(6, 'e- National Agriculture Market', 'E-NAM', 'e-nam.jpg', '#');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services`
 --
 
@@ -52492,6 +52517,12 @@ ALTER TABLE `reg_roles`
   ADD PRIMARY KEY (`role_id`);
 
 --
+-- Indexes for table `schemes`
+--
+ALTER TABLE `schemes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -52584,6 +52615,12 @@ ALTER TABLE `projects`
 --
 ALTER TABLE `reg_roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `schemes`
+--
+ALTER TABLE `schemes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `services`
